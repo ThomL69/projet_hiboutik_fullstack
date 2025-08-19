@@ -1,0 +1,12 @@
+FastAPI
+uvicorn
+sqlalchemy
+databases
+pydantic
+passlib[bcrypt]
+python-multipart
+pytest
+httpx
+alembic
+python-dotenv
+corsheaders
