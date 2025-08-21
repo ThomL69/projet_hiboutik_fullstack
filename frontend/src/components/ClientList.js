@@ -8,13 +8,14 @@ const ClientList = () => {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
-    const fetchClients = async (pageNumber) => {
+    const fetchClients = async (name) => {
         try {
-            const response = await axios.get(`/api/clients?page=${pageNumber}`);
+            const response = await axios.get(`/clients/?nom=${name}`);
             setClients(response.data.clients);
             setTotalPages(response.data.totalPages);
             setLoading(false);
         } catch (err) {
+            console.log(err);
             setError(err.message);
             setLoading(false);
         }
@@ -32,7 +33,7 @@ const ClientList = () => {
             <h2>Client List</h2>
             <ul>
                 {clients.map(client => (
-                    <li key={client.id}>{client.name} - {client.email}</li>
+                    <li key={client.id}>{client.last_name} - {client.first_name} - {client.email}</li>
                 ))}
             </ul>
             <div>

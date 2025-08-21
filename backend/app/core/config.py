@@ -10,6 +10,7 @@ class Settings(BaseModel):
     HIBOUTIK_BASE_URL: str = os.getenv("HIBOUTIK_BASE_URL")
     HIBOUTIK_USER: str = os.getenv("HIBOUTIK_USER")
     HIBOUTIK_KEY: str = os.getenv("HIBOUTIK_KEY")
+    SECRET_KEY: str = "qC7ZYN90Itbqjv8YD5CIyyE48EIe1n"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 

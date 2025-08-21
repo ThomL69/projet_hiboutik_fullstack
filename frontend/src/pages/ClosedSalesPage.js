@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
-const SalesPage = () => {
+const ClosedSalesPage = () => {
     const token = localStorage.getItem("token");
-    const { clientId } = useParams();
-    const [sales, setSales] = useState([]);
+    const [closedSales, setClosedSales] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(1);
@@ -14,19 +12,19 @@ const SalesPage = () => {
     useEffect(() => {
         const getSales = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/customer/${clientId}/sales?page=${page}&limit=${limitData}`, {
+                const response = await fetch(`http://localhost:8000/closed_sales`, {
                     headers: {
                         "Authorization": `Bearer ${token}`, // JWT token
                         "Content-Type": "application/json"
                     }
                 });
+                
                 if (!response.ok) {
                      throw new Error("Error Unauthorized or API error");
                 }
                 const data = await response.json();
-                setSales(data.ventes);
+                setClosedSales(data.closed_sales);
                 setTotal(data.total);
-
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -35,27 +33,28 @@ const SalesPage = () => {
         };
 
         getSales();
-    }, [clientId, page]);
+    }, []);
 
+    const indexOfLastData = page * limitData;
+    const indexOfFirstData = indexOfLastData - limitData;
     const totalPages = Math.ceil(total / limitData);
+    const currentClosedSales = closedSales.slice(indexOfFirstData , indexOfLastData);
 
-    // if (loading) return <div>Loading...</div>;
-    // if (error) return <div>Error: {error}</div>;
     if (loading) return <div className='txtload'>Loading...</div>;
     if (error) return <div className='txterror'>Error: {error}</div>;
-    
+
     return (
-        <div className="MyPageM">
-            <h3>Sales for Client ID #{clientId}:</h3>
+        <div className="MyPageMC">
+            <h3>All Closed Sales:</h3>
             <ul>
-                {sales.map((sale) => (
-                <li key={sale.id}>
-                    Sale #{sale.sale_id} - {sale.created_at} - {sale.completed_at} - total des ventes: {sale.total}€
+                {currentClosedSales.map((closedSale) => (
+                <li key={closedSale.id}>
+                    Closed Sales #{closedSale.sale_id} - {closedSale.created_at} - {closedSale.completed_at} - total des ventes: {closedSale.total}€
                 </li>
                 ))}
             </ul>
 
-            <div className="MyPage">
+            <div className="MyPageC">
                 <button className="MyBtn2" disabled={page <= 1} onClick={() => setPage((p) => p - 1)}>
                     Previous
                 </button>
@@ -64,7 +63,7 @@ const SalesPage = () => {
                     {page} / {totalPages || 1}
                 </span>
 
-                <button className="MyBtn3"
+                <button className="MyBtn3" 
                 disabled={page >= totalPages}
                 onClick={() => setPage((p) => p + 1)}
                 >
@@ -75,4 +74,4 @@ const SalesPage = () => {
     );
 };
 
-export default SalesPage;
+export default ClosedSalesPage;

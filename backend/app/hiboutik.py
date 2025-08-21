@@ -1,5 +1,6 @@
 import requests
 from app.core.config import settings
+import json
 
 # AUTH=(USER, KEY)
 AUTH = (settings.HIBOUTIK_USER, settings.HIBOUTIK_KEY)
@@ -18,10 +19,14 @@ def get_clients(name: str = None):
 def get_sales(customer_id: int):
     url = f"{BASE}/customer/{customer_id}/sales"
     res = requests.get(url, auth=AUTH)
+    # res["cliend_id"] = str(customer_id)
     res.raise_for_status()
+    # return customer_id, res.json()
     return res.json()
+    # return tab.json()
 
-# worked but not optimize
+
+# worked but not optimize if many customers and sales
 # def get_closed_sales():
 #     sales_closed = {}
 #     clients = get_clients();
@@ -36,16 +41,17 @@ def get_sales(customer_id: int):
 # Version en essayant une autre URL
 # Recuperation des ventes cloturees
 def get_closed_sales():
-    sales_closed = {}
+    sales_closed = []
     sales_id = 1
     l = []
     
     allSales = get_all_sales(sales_id, l)
-    #print(len(allSales))
+    #print(len(allSales)) # taille 34
 
     for s in allSales:
         if int(s[0].get("date_z")) > 0:
-            sales_closed[s[0].get("sale_id")] = s
+            # sales_closed[s[0].get("sale_id")] = s
+            sales_closed.append(s[0])
 
     return sales_closed
     

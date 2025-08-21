@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { fetchSalesByClientId } from '../services/api';
 
-const SalesList = ({ clientId, page }) => {
+const SalesList = ({ clientId }) => {
     const [sales, setSales] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
         const loadSales = async () => {
             setLoading(true);
-            try {               
-                const response = await fetch(`http://localhost:8000/client/${clientId}/ventes?page=${page}`);
-                const data = await response.json();
-                setSales(data);
-                console.log(response.totalPages);
+            try {
+                const response = await fetchSalesByClientId(clientId, page);
+                setSales(response.data);
                 setTotalPages(response.totalPages);
             } catch (err) {
                 setError(err.message);
@@ -28,15 +27,15 @@ const SalesList = ({ clientId, page }) => {
         }
     }, [clientId, page]);
 
-     const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
+    const handleNextPage = () => {
+        if (page < totalPages) {
+            setPage(page + 1);
         }
     };
 
     const handlePreviousPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+        if (page > 1) {
+            setPage(page - 1);
         }
     };
 
@@ -48,16 +47,16 @@ const SalesList = ({ clientId, page }) => {
             <h2>Sales List</h2>
             <ul>
                 {sales.map(sale => (
-                    <li key={sale.sales_id}>
-                       {sale.sales_id} - {sale.created_at} - {sale.completed_at} - {sale.store_id}
+                    <li key={sale.id}>
+                        Amount: {sale.amount}, Date: {new Date(sale.date).toLocaleDateString()}
                     </li>
                 ))}
             </ul>
             <div>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+                <button onClick={handlePreviousPage} disabled={page === 1}>
                     Previous
                 </button>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                <button onClick={handleNextPage} disabled={page === totalPages}>
                     Next
                 </button>
             </div>

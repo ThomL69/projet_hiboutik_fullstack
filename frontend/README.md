@@ -1,68 +1,70 @@
-# Frontend Documentation
+# Getting Started with Create React App
 
-This is the frontend part of the fullstack solution built with React. It interacts with the FastAPI backend to provide a user interface for managing clients and sales data.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project Structure
+## Available Scripts
 
-- **public/**: Contains static files.
-  - **index.html**: The main HTML file for the React application.
+In the project directory, you can run:
 
-- **src/**: Contains the source code for the React application.
-  - **components/**: Contains reusable React components.
-    - **ClientList.js**: Displays a list of clients.
-    - **SalesList.js**: Displays a list of sales for a selected client.
-  - **pages/**: Contains page components.
-    - **ClientsPage.js**: Interface for searching clients by name.
-    - **SalesPage.js**: Displays sales data for a selected client.
-  - **services/**: Contains service files for API calls and authentication.
-    - **api.js**: Functions for making API calls to the backend.
-    - **auth.js**: Handles user authentication.
-  - **App.js**: The main component that sets up routing.
-  - **index.js**: The entry point of the React application.
+### `npm start`
 
-## Getting Started
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-1. **Installation**: 
-   - Ensure you have Node.js installed.
-   - Navigate to the `frontend` directory and run:
-     ```
-     npm install
-     ```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-2. **Running the Application**:
-   - Start the development server:
-     ```
-     npm start
-     ```
-   - The application will be available at `http://localhost:3000`.
+### `npm test`
 
-## API Integration
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The frontend communicates with the backend API to fetch client and sales data. Ensure the backend is running and accessible for the frontend to function correctly.
+### `npm run build`
 
-## Testing
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-To run tests for the frontend, use:
-```
-npm test
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Docker
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To build and run the frontend application in a Docker container, use the provided Dockerfile. Ensure Docker is installed and running, then execute:
-```
-docker build -t frontend .
-docker run -p 3000:3000 frontend
-```
+### `npm run eject`
 
-## Security
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Ensure that any sensitive information, such as API keys or authentication tokens, is managed securely and not hard-coded in the application.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Contributing
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## License
+## Learn More
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
