@@ -1,5 +1,7 @@
 FastAPI
 uvicorn
+fastapi-utils
+databases[sqlite]
 sqlalchemy
 databases
 pydantic
@@ -10,3 +12,4 @@ httpx
 alembic
 python-dotenv
 corsheaders
+jwt

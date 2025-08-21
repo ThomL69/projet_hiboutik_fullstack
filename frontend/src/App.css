@@ -1,0 +1,328 @@
+body{
+background-color: #000;
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Myap{
+    color: #fff;
+  font-size: 20px;
+  height: 30px;
+  pointer-events: none;
+}
+ /* margin-top, margin-right, margin-bottom et margin-left. */
+.Homediv{
+  margin-top:50px;
+  margin-left:400px;
+  font-size: 20px;
+  color: #fff;
+
+}
+
+.Homediv h2{
+  
+  margin-left:50px;
+  font-size: 28px;
+  color: #0f0;
+
+}
+
+h2{
+  margin-top:50px;
+  margin-left:350px;
+  font-size: 36px;
+    color: #fff;
+}
+
+h3{
+  margin-left:200px;
+  font-size: 28px;
+  color: #fff;
+}
+
+h4{
+  margin-left:300px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.txtload{
+  font-size: 20px;
+  color: #00ff00;
+  margin-left:400px;
+}
+
+.txterror{
+  font-size: 20px;
+  color: #ff0000;
+  margin-left:400px;
+}
+
+
+.MyMnu{
+  border-radius: 20px;
+  /* border:solid #fff; */
+
+  height:60px;
+  margin: 80px 30px 30px 400px;
+  text-decoration: none;
+
+}
+
+.MyMnuItem1{
+  border-radius: 20px;
+  /* border-right: ; */
+  border:solid #fff;
+  height:60px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding:15px;
+}
+
+.MyMnuItem2{
+border-radius: 20px;
+  /* border-right: ; */
+  border:solid #fff;
+  height:60px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding:15px;
+}
+
+.MyMnuItem3{
+  border-radius: 20px;
+  /* border-right: ; */
+  border:solid #fff;
+  height:60px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding:15px;
+}
+
+.MyMnuItem1:hover{
+  background-color:#0f0;
+  color:#000;
+}
+.MyMnuItem2:hover{
+  background-color:#0f0;
+  color:#000;
+}
+
+.MyMnuItem3:hover{
+  background-color:#0f0;
+  color:#000;
+}
+
+.MyInput{
+  border-radius:20px;
+  color: white;
+  width:250px;
+  height: 40px;
+  font-size: 20px;
+  margin:50px 20px 20px 200px;
+
+}
+
+.formlogin{
+  margin: 80px 0px 0px 80px;
+
+}
+
+
+
+.MyLoginN{
+  border-radius:20px;
+  color: rgb(43, 37, 37);
+  width:200px;
+  height: 40px;
+  font-size: 18px;
+  margin:50px 20px 20px 300px;
+   text-align: center;
+
+}
+
+.MyLoginP{
+  border-radius:20px;
+  color: rgb(43, 37, 37);
+  width:200px;
+  height: 40px;
+  font-size: 18px;
+  margin:50px 20px 20px 20px;
+  text-align: center;
+
+}
+
+.MyBtnLog{
+  border-radius:10px;
+  color: white;
+  width:150px;
+  margin-top:20px;
+  margin-left:20px;
+  background-color: #30251e;
+  font-size: 20px;
+  height: 40px;
+
+}
+.MyBtnLog:hover{
+  background-color:#0f0;
+  color:#000;
+   
+}
+
+.MyBtnDis{
+  position: absolute;
+  top:160px;
+  left:850px;
+  border-radius: 20px;
+  /* border-right: ; */
+  border:solid #fff;
+  height:60px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding:15px;
+  background-color: #000;
+}
+
+.MyBtnDis:hover{
+  background-color:#0f0;
+  color:#000;
+   
+}
+
+.messerror{
+  font-size: 20px;
+  color: #ff0000;
+  margin-left:460px;
+
+}
+
+
+.MyBtn{
+  color: white;
+  border-radius:10px;
+  width:auto;
+  height: 40px;
+  margin-top:20px;
+  margin-left:20px;
+  background-color: #30251e;
+  font-size: 20px;
+
+}
+
+.MyBtn:hover{
+  background-color:#0f0;
+  color:#000;
+}
+
+.MyBtn2{
+  border-radius:10px;
+  color: white;
+  width:70px;
+  margin-top:20px;
+  margin-left:20px;
+  margin-right:20px;
+  background-color: #30251e;
+  font-size: 14px;
+
+}
+.MyBtn2:hover{
+  background-color:#0f0;
+  color:#000;
+}
+
+.MyBtn3{
+ border-radius:10px;
+  color: white;
+  width:70px;
+  margin-top:20px;
+  margin-left:20px;
+  background-color: #30251e;
+  font-size: 14px;
+
+}
+
+.MyBtn3:hover{
+  background-color:#0f0;
+  color:#000;
+}
+
+
+.MyPageM{
+  margin-left:200px;
+  color: white;
+
+
+}
+
+.MyPageMC{
+  margin-left:100px;
+  color: white;
+
+
+}
+
+.MyPage{
+  margin-left:200px;
+
+
+
+}
+.MyPageC{
+  margin-left:200px;
+
+
+
+}
+
+
+
+
+ul {
+
+  margin-left:200px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+
+
+
+.App-header {
+  background-color: #0f56e4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
