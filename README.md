@@ -8,24 +8,11 @@ This project is a fullstack application built with FastAPI for the backend and R
 fullstack-solution
 ├── backend
 │   ├── app
-│   │   ├── api
-│   │   │   ├── endpoints
-│   │   │   │   ├── clients.py
-│   │   │   │   └── sales.py
-│   │   │   └── __init__.py
 │   │   ├── core
 │   │   │   ├── config.py
-│   │   │   └── security.py
-│   │   ├── db
-│   │   │   ├── base.py
-│   │   │   ├── models
-│   │   │   │   ├── client.py
-│   │   │   │   └── sale.py
-│   │   │   └── session.py
 │   │   ├── main.py
-│   │   └── tests
-│   │       ├── test_clients.py
-│   │       └── test_sales.py
+│   │   └── test_main.py
+│   ├── .gitignore
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── README.md
@@ -34,17 +21,19 @@ fullstack-solution
 │   │   └── index.html
 │   ├── src
 │   │   ├── components
-│   │   │   ├── ClientList.js
-│   │   │   └── SalesList.js
+│   │   │   ├── Pagination.js
 │   │   ├── pages
 │   │   │   ├── ClientsPage.js
+│   │   │   ├── ClosedSalesPage.js
+│   │   │   ├── Home.js
+│   │   │   ├── Login.js
 │   │   │   └── SalesPage.js
 │   │   ├── App.js
+│   │   ├── App.css
 │   │   ├── index.js
-│   │   └── services
-│   │       ├── api.js
-│   │       └── auth.js
+│   │   ├── logo.svg.js
 │   ├── package.json
+│   ├── .gitignore
 │   ├── Dockerfile
 │   └── README.md
 ├── docker-compose.yml
@@ -56,14 +45,15 @@ fullstack-solution
 The backend is built using FastAPI and includes the following features:
 
 - **API Endpoints**: 
-  - `/api/clients`: Retrieve a list of clients based on a given name.
-  - `/api/sales`: Retrieve sales data for a specific client.
+  - `/customers/`: Retrieve a list of clients based on a given name.
+  - `/customer/{customer_id}/sales`: Retrieve sales data for a specific client.
+  - `/closed_sales`: Retrieve a list of closed sales
 
 - **Database**: 
   - Uses SQLAlchemy for ORM and supports data persistence.
 
 - **Security**: 
-  - Implements user authentication and password hashing.
+  - Implements user authentication and password hashing with OAuth2.
 
 - **Testing**: 
   - Includes unit tests for API endpoints.
@@ -73,12 +63,14 @@ The backend is built using FastAPI and includes the following features:
 The frontend is built using React.js and includes:
 
 - **Components**: 
-  - `ClientList`: Displays a list of clients.
-  - `SalesList`: Displays sales data for a selected client.
+  - `Pagination`: Manage the pagination if many elements.
 
 - **Pages**: 
+  - `Home`: Just the home page when the application start
+  - `Login`: Mandatory authentification to access the application
   - `ClientsPage`: Interface for searching clients by name.
   - `SalesPage`: Displays sales data for a selected client.
+  - `ClosedSalesPage`: Displays closed sales data.
 
 - **API Services**: 
   - Functions for making API calls to the backend.
@@ -86,6 +78,19 @@ The frontend is built using React.js and includes:
 ## Docker
 
 The project includes Dockerfiles for both the backend and frontend, allowing for easy containerization and deployment. A `docker-compose.yml` file is provided to manage the services.
+
+Unfortunately , when this part is not functional because of this error below:
+
+```bash
+{
+  root@XXX:/opt/fullstack-solution-latest# docker-compose -f docker-compose.yml up -d --force-recreate
+  Recreating eddf218c60f2_fullstack-solution-latest_db_1 ...
+
+  ERROR: for eddf218c60f2_fullstack-solution-latest_db_1  'ContainerConfig'
+
+  ERROR: for db  'ContainerConfig'
+}
+```
 
 ## Getting Started
 
@@ -100,7 +105,7 @@ The project includes Dockerfiles for both the backend and frontend, allowing for
    cd frontend
    npm install
    ```
-4. Run the application using Docker:
+4. Run the application using Docker **(Not Working)**: 
    ```
    docker-compose up --build
    ```

@@ -26,40 +26,8 @@
 //   );
 // }
 
-
-// export default App;
-
-// import './App.css';
-// import React from 'react';
-// // import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-// import ClientsPage from './pages/ClientsPage';
-// import SalesPage from './pages/SalesPage'; 
-
-// function App() {
-//   return (
-//     <div className="App">
-//         <h1>Welcome to the Sales Management System</h1>
-//       <Router>
-//         <nav>
-//           <Link to="/">Home</Link> |{" "}
-//           <Link to="/clients">ClientsPage</Link> |{" "}
-//           <Link to="/sales">SalesPage</Link>
-//         </nav>
-//         <Routes>
-//           <Route path="/clients" element={<ClientsPage />} />
-//           <Route path="/sales" element={<SalesPage />} />
-//         </Routes>
-//       </Router>
-//     </div>
-    
-    
-//   );
-// }
-
-// export default App;
-
 import './App.css';
+import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ClientsPage from './pages/ClientsPage';
 import SalesPage from './pages/SalesPage';
@@ -82,29 +50,9 @@ function handlelogout() {
   }
 
 function App() {
-  // const [name, setName] = useState('');
-  // const [clients, setClients] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [dataPerPage] = useState(5);
-
-  // // Liste des clients
-  // const searchClients = async () => {
-  //   const response = await fetch(`http://localhost:8000/clients/?nom=${name}`);
-  //   const data = await response.json();
-  //   setClients(data);
-  // };
-
-  // // Pagination
-  // const indexOfLastData = currentPage * dataPerPage;
-  // const indexOfFirstData = indexOfLastData - dataPerPage;
-  // const currentClients = clients.slice(indexOfFirstData , indexOfLastData);
-
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  // Liste des sales en cliquant sur un client
-
   return (
     <div>
+      <img src={logo} className="App-logo" alt="logo" />
       <h2>
         Gestion des Clients & Ventes
       </h2>
@@ -152,7 +100,6 @@ function App() {
         </Routes>
       </Router>
 
-      {/* <ClientsPage onSelect={setSelectedClient} /> */}
     </div>
   );
 }

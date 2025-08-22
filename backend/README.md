@@ -5,17 +5,16 @@ This is the backend part of the Fullstack Solution project, built using FastAPI.
 ## Project Structure
 
 - **app**: Contains the main application code.
-  - **api**: Holds the API endpoints.
-    - **endpoints**: Contains specific endpoint files for clients and sales.
-  - **core**: Contains configuration and security settings.
-  - **db**: Manages database models and sessions.
-  - **tests**: Contains unit tests for the application.
+  - **core**: Contains configuration settings.
+  - Manages database models and sessions inside **main**.
+  - Contains unit tests for the application **test_main**.
+- **sqlite**: Contains the sqlite db : **hiboutik.db**
 - **Dockerfile**: Instructions for building the Docker image for the backend.
 - **requirements.txt**: Lists the dependencies required for the backend application.
 
 ## Features
 
-- **Client Management**: Retrieve a list of registered clients based on a given name.
+- **Client Management**: Retrieve a list of registered clients based on a given name or not.
 - **Sales Data**: Retrieve sales data for a specific client.
 - **Pagination**: Implement pagination for client and sales data retrieval.
 - **Security**: User authentication and password hashing.
@@ -59,7 +58,7 @@ To build and run the backend application using Docker:
 
 To run the unit tests, execute the following command:
 ```
-pytest app/tests
+pytest 
 ```
 
 ## License
