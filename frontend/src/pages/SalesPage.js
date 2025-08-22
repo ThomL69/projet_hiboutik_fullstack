@@ -39,8 +39,6 @@ const SalesPage = () => {
 
     const totalPages = Math.ceil(total / limitData);
 
-    // if (loading) return <div>Loading...</div>;
-    // if (error) return <div>Error: {error}</div>;
     if (loading) return <div className='txtload'>Loading...</div>;
     if (error) return <div className='txterror'>Error: {error}</div>;
     

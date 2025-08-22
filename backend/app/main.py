@@ -273,6 +273,7 @@ def delete_clients(clientId: int, db: Session = Depends(get_db)):
 
     if db_client is None:
         raise HTTPException(status_code=404, detail="Client Not Found")
+    
     db.delete(db_client)
     db.commit()
     return db_client

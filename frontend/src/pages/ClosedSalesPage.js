@@ -35,6 +35,7 @@ const ClosedSalesPage = () => {
         getSales();
     }, []);
 
+    // Pagination
     const indexOfLastData = page * limitData;
     const indexOfFirstData = indexOfLastData - limitData;
     const totalPages = Math.ceil(total / limitData);
