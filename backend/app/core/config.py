@@ -14,7 +14,7 @@ class Settings(BaseModel):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
-    print(">>>>DEBUG: ", HIBOUTIK_BASE_URL)
+    # print(">>>>DEBUG: ", HIBOUTIK_BASE_URL)
 
     class Config:
         env_file = ".env"

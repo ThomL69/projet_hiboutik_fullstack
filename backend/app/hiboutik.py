@@ -2,10 +2,10 @@ import requests
 from app.core.config import settings
 import json
 
-# AUTH=(USER, KEY)
 AUTH = (settings.HIBOUTIK_USER, settings.HIBOUTIK_KEY)
 BASE = settings.HIBOUTIK_BASE_URL.rstrip('/')
 
+# Retourne liste de clients si un nom est renseigne ou pas
 def get_clients(name: str = None):
     url=f"{BASE}/customers/"
     res = requests.get(url, auth=AUTH)
@@ -15,15 +15,12 @@ def get_clients(name: str = None):
         clients = [c for c in clients if name.lower() in c.get("last_name", "").lower()]
     return clients
 
-
+# Retourne liste de ventes d'un client
 def get_sales(customer_id: int):
     url = f"{BASE}/customer/{customer_id}/sales"
     res = requests.get(url, auth=AUTH)
-    # res["cliend_id"] = str(customer_id)
     res.raise_for_status()
-    # return customer_id, res.json()
     return res.json()
-    # return tab.json()
 
 
 # worked but not optimize if many customers and sales
@@ -50,7 +47,6 @@ def get_closed_sales():
 
     for s in allSales:
         if int(s[0].get("date_z")) > 0:
-            # sales_closed[s[0].get("sale_id")] = s
             sales_closed.append(s[0])
 
     return sales_closed

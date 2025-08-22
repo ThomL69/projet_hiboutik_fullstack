@@ -7,11 +7,6 @@ background-color: #000;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .Myap{
     color: #fff;
   font-size: 20px;
@@ -294,13 +289,6 @@ ul {
   margin-left:200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 5s linear;
-  }
-}
-
-
 
 
 .App-header {
@@ -318,11 +306,23 @@ ul {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.App-logo {
+  pointer-events: none;
+  width:100px;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+} */
+
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */

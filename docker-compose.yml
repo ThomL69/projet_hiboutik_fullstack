@@ -7,11 +7,14 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend:/app
+      - ./backend:/sqlite
     ports:
       - "8000:8000"
     environment:
-      - PYTHONPATH=/app
+      - PYTHONPATH=/backend/app
       - DATABASE_URL=sqlite:///./sqlite/hiboutik.db
+      - DB_CLIENT:'sqlite3'
+      - DB_FILENAME:'/backend/sqlite/hiboutik.db'
     depends_on:
       - db
 
@@ -29,5 +32,38 @@ services:
   db:
     image: nouchka/sqlite3:latest
     volumes:
-      - ./sqlite_data:./backend/sqlite
-    restart: always
+      - ./backend/sqlite
+
+# version: '3.8'
+
+# services:
+#   backend:
+#     build:
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./backend:/app
+#     ports:
+#       - "8000:8000"
+#     environment:
+#       - PYTHONPATH=/app
+#       - DATABASE_URL=sqlite:///./sqlite/hiboutik.db
+#     depends_on:
+#       - db
+
+#   frontend:
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ./frontend:/src
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - backend
+
+#   db:
+#     image: nouchka/sqlite3:latest
+#     volumes:
+#       - ./sqlite_data:./backend/sqlite
+#     restart: always

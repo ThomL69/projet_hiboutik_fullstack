@@ -32,7 +32,6 @@ function ClientsPage () {
     const indexOfFirstData = indexOfLastData - dataPerPage;
     const currentClients = clients.slice(indexOfFirstData , indexOfLastData);
 
-    //const paginate = (pageNumber) => setCurrentPage(pageNumber);
     const totalPages = Math.ceil(clients.length / 5);
 
     return (
