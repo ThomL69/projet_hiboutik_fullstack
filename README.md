@@ -12,6 +12,8 @@ fullstack-solution
 │   │   │   ├── config.py
 │   │   ├── main.py
 │   │   └── test_main.py
+│   ├── sqlite
+│   │   ├── hiboutik.db
 │   ├── .gitignore
 │   ├── Dockerfile
 │   ├── requirements.txt
