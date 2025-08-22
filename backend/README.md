@@ -18,7 +18,9 @@ This is the backend part of the Fullstack Solution project, built using FastAPI.
 - **Sales Data**: Retrieve sales data for a specific client.
 - **Pagination**: Implement pagination for client and sales data retrieval.
 - **Security**: User authentication and password hashing.
-- **Testing**: Unit tests for all endpoints to ensure functionality.
+- **Testing**: Unit tests for data persistence to ensure functionality.
+<!-- - **Testing**: Unit tests for all endpoints to ensure functionality. -->
+
 
 ## Getting Started
 
