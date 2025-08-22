@@ -56,7 +56,7 @@ The backend is built using FastAPI and includes the following features:
   - Implements user authentication and password hashing with OAuth2.
 
 - **Testing**: 
-  - Includes unit tests for API endpoints.
+  - Includes unit tests for data persistence.
 
 ## Frontend
 
